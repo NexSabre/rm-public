@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3dfgl4g6uun"]
+
+[sub_resource type="GDScript" id="GDScript_g6sex"]
+script/source = "extends Node
+
+func _ready() -> void:
+	$TextureRect.texture = load(\"res://dice/dice_cup_info_panel_one.png\")
+"
+
+[node name="Dice" type="Node"]
+script = SubResource("GDScript_g6sex")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0

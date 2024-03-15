@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://yr4em2obdggs"]
+
+[ext_resource type="Script" path="res://scenes/player_textbox.gd" id="1_mrc7b"]
+[ext_resource type="Texture2D" uid="uid://43k1jsbkox4n" path="res://assets/ui/player_dialog.png" id="2_hb838"]
+[ext_resource type="FontFile" uid="uid://bacyjx7mbmrj" path="res://fonts/superstar_memesbruh03.ttf" id="3_6p0fh"]
+
+[node name="Textbox" type="MarginContainer"]
+z_index = 10
+script = ExtResource("1_mrc7b")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_hb838")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 12
+patch_margin_right = 4
+patch_margin_bottom = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 10
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6p0fh")
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

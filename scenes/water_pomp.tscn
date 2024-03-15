@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl7upw833p7bf"]
+
+[ext_resource type="Texture2D" uid="uid://d35iixsq7vs12" path="res://assets/furnishings/water_pomp.png" id="1_1k4ci"]
+[ext_resource type="Script" path="res://scenes/water_pomp.gd" id="1_wweo3"]
+[ext_resource type="PackedScene" uid="uid://v2b5hbp6b81d" path="res://interaction/interaction_area/interaction_area.tscn" id="2_ybseg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgt28"]
+size = Vector2(34, 20)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_wweo3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_1k4ci")
+flip_h = true
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_ybseg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_fgt28")

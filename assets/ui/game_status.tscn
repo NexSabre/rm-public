@@ -1,0 +1,203 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxkkwx5b7hi2e"]
+
+[ext_resource type="Script" path="res://assets/ui/game_status.gd" id="1_6m0kb"]
+[ext_resource type="FontFile" uid="uid://bacyjx7mbmrj" path="res://fonts/superstar_memesbruh03.ttf" id="1_iv520"]
+[ext_resource type="PackedScene" uid="uid://xsnnc3rihlui" path="res://dice/DiceCup.tscn" id="3_wrcry"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xrdn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhhbs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r407u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o6pv"]
+
+[node name="GameStatus" type="CanvasLayer"]
+script = ExtResource("1_6m0kb")
+
+[node name="Top" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Top"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Top/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_iv520")
+text = "dice"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiceCup" parent="Top/VBoxContainer" instance=ExtResource("3_wrcry")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Center" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Center/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 240
+text = "PAUSE"
+
+[node name="Bottom" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -54.0
+offset_right = 26.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="LabelChangeEnergy" type="Label" parent="Bottom/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 30
+text = "..."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Bottom/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 40
+text = "Energy"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Bottom/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/fill = SubResource("StyleBoxFlat_7xrdn")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Bottom/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="LabelChangeWater" type="Label" parent="Bottom/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 30
+text = "..."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Bottom/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 40
+text = "water pump"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Bottom/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/fill = SubResource("StyleBoxFlat_jhhbs")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Bottom/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="LabelChangePower" type="Label" parent="Bottom/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 30
+text = "..."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Bottom/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 40
+text = "power plant"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Bottom/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/fill = SubResource("StyleBoxFlat_r407u")
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Bottom/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="LabelChangeHarvest" type="Label" parent="Bottom/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 30
+text = "..."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Bottom/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 40
+text = "Harvest"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Bottom/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iv520")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/fill = SubResource("StyleBoxFlat_5o6pv")

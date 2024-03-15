@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bq0lj1abkoenv"]
+
+[ext_resource type="Script" path="res://dice/inventory_item.gd" id="1_3rbbx"]
+[ext_resource type="Texture2D" uid="uid://bvu7m67mkxeer" path="res://dice/dice_cup_info_panel_five.png" id="2_55kfw"]
+
+[resource]
+script = ExtResource("1_3rbbx")
+name = "five"
+value = 5
+texture = ExtResource("2_55kfw")

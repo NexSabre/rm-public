@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyvd2ecnb0cwr"]
+
+[ext_resource type="Script" path="res://dice/Slot.gd" id="1_371k6"]
+[ext_resource type="Texture2D" uid="uid://dw88rawknon82" path="res://dice/dice_cup_info_panel.png" id="2_ageff"]
+
+[node name="Panel1" type="Panel"]
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_371k6")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_ageff")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

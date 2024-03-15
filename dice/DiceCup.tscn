@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://xsnnc3rihlui"]
+
+[ext_resource type="Script" path="res://dice/DiceCup.gd" id="1_i3c0u"]
+[ext_resource type="Texture2D" uid="uid://cswlkq8tvl6jo" path="res://dice/dice_cup_info.png" id="1_mbgjk"]
+[ext_resource type="PackedScene" uid="uid://cyvd2ecnb0cwr" path="res://dice/Slot.tscn" id="3_8rmpj"]
+
+[node name="DiceCup" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("1_i3c0u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(96, 16)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 96.0
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(4, 4)
+texture = ExtResource("1_mbgjk")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -31.5
+offset_right = 192.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mbgjk")
+region_rect = Rect2(4, 0, 88, 16)
+patch_margin_top = 4
+patch_margin_bottom = 4
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+offset_top = 0.5
+offset_right = 96.0
+offset_bottom = 16.5
+scale = Vector2(4, 4)
+theme_override_constants/h_separation = 16
+columns = 6
+
+[node name="Panel1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_8rmpj")]
+layout_mode = 2
+
+[node name="Panel2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_8rmpj")]
+layout_mode = 2
+
+[node name="Panel3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_8rmpj")]
+layout_mode = 2
+
+[node name="Panel4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_8rmpj")]
+layout_mode = 2
+
+[node name="Panel5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_8rmpj")]
+layout_mode = 2
+
+[node name="Panel6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_8rmpj")]
+layout_mode = 2
